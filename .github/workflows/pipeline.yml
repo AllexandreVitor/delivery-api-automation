@@ -8,3 +8,13 @@ on:
         branches:
             -main
 
+jobs:
+    security-sast:
+        name: 0. SAST (Segurança)
+        runs-on: ubuntu-latest
+        steps:
+            -name: checkout falhas e vulnerabilidades
+            uses: ajinabraham/njsscan-action@master
+            with:
+                args: '.'
+
